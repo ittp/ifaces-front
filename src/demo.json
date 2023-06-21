@@ -1,0 +1,26 @@
+{
+  "ports": [
+    {
+      "id": 0,
+      "name": "ISP",
+      "phy": "/dev/phy"
+    },
+    {
+      "id": 1,
+      "": "LAN",
+      "phy": "/dev/phy"
+    }
+  ],
+  "interfaces": {
+    "wan": {
+      "ports": [0],
+      "proto": "static",
+      "ip": "1.1.1.1"
+    },
+    "lan": {
+      "ports": [1, 2, 3, 4],
+      "proto": "static",
+      "ip": "192.168.1.1"
+    }
+  }
+}

@@ -14,6 +14,7 @@ import {
   Input,
   Select,
 } from "antd";
+import { ProForm, ProFormText } from "@ant-design/pro-components";
 
 // const sDV = (
 //   <Drawer size={"200px"} visible={"true"}>
@@ -41,14 +42,9 @@ import {
 //   </Drawer>
 // );
 
-let brands = ["VZ", "KS", "LB", "FC", "PO"];
-
-export default function App(users) {
-  console.log(users);
+let LoginA = () => {
   return (
-    <div className="App">
-      <PageHeader title={<Row>Logo</Row>} extra={"@Username"} />
-      <div></div>
+    <>
       <h2>Авторизация</h2>
       <Space>
         <Row>
@@ -67,6 +63,26 @@ export default function App(users) {
           </Form>
         </Row>
       </Space>
+    </>
+  );
+};
+
+let brands = ["VZ", "KS", "LB", "FC", "PO"];
+
+export default function App(users) {
+  console.log(users);
+  return (
+    <div className="App">
+      <PageHeader title={<Row>Logo</Row>} extra={"@Username"} />
+      <div></div>
+      <ProForm
+        onFinish={async (values) => {
+          console.log(values);
+          // await fetch()
+        }}
+      >
+        <ProFormText name="name" label="tpa" />
+      </ProForm>
     </div>
   );
 }

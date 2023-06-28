@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "draft/automatic-danilo" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "draft/automatic-danilo" ]
 
 jobs:
   build:
@@ -20,12 +20,18 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - name: Setup Yarn
+  # You may pin to the exact commit or the version.
+  # uses: mskelton/setup-yarn@2fd0f48147cbee4fd8a71723a3b86851d86ba46b
+      uses: mskelton/setup-yarn@v1.4.0
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    # Additional flags to pass to the install command.
+       # flags: # optional
+    # Node version to use, defaults to the current LTS version.
+        node-version: 18.x # optional, default is 18.x
+    # Git ref to checkout. Passed to `actions/checkout`.
+    #ref: # optional
+    # Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm
+        cache: yarn # optional, default is yarn
+    
+    - uses: actions/checkout@v3

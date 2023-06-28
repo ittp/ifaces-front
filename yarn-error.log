@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /opt/yarn-v1.22.19/bin/yarn.js add @ant-design/pro-components @ant-design/pro-icons axios swr
+  /usr/local/bin/node /opt/yarn-v1.22.19/bin/yarn.js install
 
 PATH: 
-  /project/home/ittp/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/project/home/ittp/.local/state/fnm_multishells/22739_1687850435414/bin:/usr/share/fnm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  /project/home/pitcher-host/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/project/home/pitcher-host/.local/state/fnm_multishells/1419_1687915935000/bin:/usr/share/fnm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 Yarn version: 
   1.22.19
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@ant-design%2fpro-icons: Not found
+  Error: https://registry.yarnpkg.com/@ant-design%2ficnos: Not found
       at Request.params.callback [as _callback] (/opt/yarn-v1.22.19/lib/cli.js:66145:18)
       at Request.self.callback (/opt/yarn-v1.22.19/lib/cli.js:140890:22)
       at Request.emit (node:events:513:28)
@@ -38,7 +38,9 @@ npm manifest:
       "passport-local": "1.0.0",
       "react": "18.0.0",
       "react-dom": "18.0.0",
-      "react-scripts": "4.0.0"
+      "react-scripts": "4.0.0",
+      "@ant-design/pro-components": "latest",
+      "@ant-design/icnos": "latest"
     },
     "devDependencies": {
       "@babel/runtime": "7.13.8",

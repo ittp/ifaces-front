@@ -1,4 +1,4 @@
-{
+  {
   "name": "interfaces",
   "version": "1.0.0",
   "description": "",
@@ -9,7 +9,9 @@
     "passport-local": "1.0.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "react-scripts": "4.0.0"
+    "react-scripts": "4.0.0",
+    "@ant-design/pro-components": "latest",
+    "@ant-design/icnos": "latest"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",

@@ -1,4 +1,4 @@
-import "./styles.css";
+// import "./styles.css";
 
 // import { Header } from "antd/lib/layout/layout";
 import {
@@ -12,69 +12,77 @@ import {
   Form,
   Button,
   Input,
-  Select
+  Select,
 } from "antd";
+import { ProForm, ProFormText } from "@ant-design/pro-components";
 
-const sDV = (
-  <Drawer size={"200px"} visible={"true"}>
-    <Row layout={"horizontal"}>
-      <Col>В очереди 5 человек</Col>
-    </Row>
-    <Row>
-      <Col>15:00</Col>
-    </Row>
-    <Row layout={"horizontal"}>
-      <Col>Иванов Иван Иванович</Col>
-    </Row>
-    <Row layout={"horizontal"}>
-      <Col>Иванов Иван Иванович</Col>
-    </Row>
-    <Row layout={"horizontal"}>
-      <Col>Иванов Иван Иванович</Col>
-    </Row>
-    <Row layout={"horizontal"}>
-      <Col>Иванов Иван Иванович</Col>
-    </Row>
-    <Row layout={"horizontal"}>
-      <Col>Иванов Иван Иванович</Col>
-    </Row>
-  </Drawer>
-);
+// const sDV = (
+//   <Drawer size={"200px"} visible={"true"}>
+//     <Row layout={"horizontal"}>
+//       <Col>В очереди 5 человек</Col>
+//     </Row>
+//     <Row>
+//       <Col>15:00</Col>
+//     </Row>
+//     <Row layout={"horizontal"}>
+//       <Col>Иванов Иван Иванович</Col>
+//     </Row>
+//     <Row layout={"horizontal"}>
+//       <Col>Иванов Иван Иванович</Col>
+//     </Row>
+//     <Row layout={"horizontal"}>
+//       <Col>Иванов Иван Иванович</Col>
+//     </Row>
+//     <Row layout={"horizontal"}>
+//       <Col>Иванов Иван Иванович</Col>
+//     </Row>
+//     <Row layout={"horizontal"}>
+//       <Col>Иванов Иван Иванович</Col>
+//     </Row>
+//   </Drawer>
+// );
 
-export default function App() {
+let LoginA = () => {
+  return (
+    <>
+      <h2>Авторизация</h2>
+      <Space>
+        <Row>
+          <Form id="authWeb">
+            <Form.Item>
+              <Input placeholder="Имя пользователя" />
+            </Form.Item>
+            <Form.Item>
+              <Input type="password" placeholder="Пароль" />
+            </Form.Item>
+            <Form.Item>
+              <Input placeholder="Домен" />
+            </Form.Item>
+
+            <Button type="submit">Далее</Button>
+          </Form>
+        </Row>
+      </Space>
+    </>
+  );
+};
+
+let brands = ["VZ", "KS", "LB", "FC", "PO"];
+
+export default function App(users) {
+  console.log(users);
   return (
     <div className="App">
-      <PageHeader
-        title={
-          <Row>
-             <img width="56" src="https://www.gov.spb.ru/static/2/files/logo.2cc00c1e.6826b6aa2472.svg" />
-</Row>
-        }
-        extra={"@Username"}
-      />
-      <div>
-
-        </div>
- <h2>Авторизация</h2>
-        <Space>
- 
-      <Row>
-        <Form id="authWeb">
-          <Form.Item>
-            <Input placeholder="Имя пользователя" />
-          </Form.Item>   
-           <Form.Item>
-            <Input type="password" placeholder="Пароль" />
-          </Form.Item>    
-          <Form.Item>
-            <Input placeholder="Домен" />
-          </Form.Item>
-
-          <Button type="submit">Далее</Button>
-        </Form>
-      </Row>
-        </Space>
-
+      <PageHeader title={<Row>Logo</Row>} extra={"@Username"} />
+      <div></div>
+      <ProForm
+        onFinish={async (values) => {
+          console.log(values);
+          // await fetch()
+        }}
+      >
+        <ProFormText name="name" label="tpa" />
+      </ProForm>
     </div>
   );
 }

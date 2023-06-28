@@ -10,6 +10,8 @@ import {
   Input,
   Select
 } from "antd";
+
+
 import Card from "antd/lib/card/Card";
 
 export default function Content(data) {

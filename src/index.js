@@ -7,9 +7,12 @@ import interfaces from "./demo.json";
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
+
+
 root.render(
   <>
     <App />
-    <Content data={interfaces} />
+     
+    />
   </>
 );
